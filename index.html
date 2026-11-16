@@ -1,0 +1,537 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Khánh Nguyễn Raw</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300;1,400&family=Be+Vietnam+Pro:wght@300;400;500&family=Montserrat:wght@600&display=swap">
+<style>
+/* Layout: an exhibition catalogue — project cards on the home wall, each opening into its own quiet room */
+:root{
+  --bg:#0f0f0f; --panel:#181817; --ink:#ece7df; --soft:#c9c3ba; --muted:#8c867e; --line:#2a2826;
+  --accent:#c2412f; --foot:#0a0a0a;
+  --serif:"Noto Serif Display", "Times New Roman", Georgia, serif;
+  --sans:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
+.gut{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+.label{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;margin:0;line-height:1.12;text-wrap:balance}
+em{font-style:italic}
+.btn{display:inline-flex;align-items:center;gap:10px;font:400 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--line);padding:12px 20px;cursor:pointer;text-decoration:none;transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--ink)}
+.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* Top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:rgba(15,15,15,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.logo{font-family:var(--serif);font-size:20px;text-decoration:none;white-space:nowrap}
+.logo em{color:var(--accent)}
+.top nav{display:flex;gap:22px}
+.top nav a{text-decoration:none;font-size:13px;letter-spacing:.06em;color:var(--soft)}
+.top nav a:hover,.top nav a.on{color:var(--ink)}
+@media (max-width:600px){.top nav a.hide-s{display:none}.top nav{gap:16px}}
+
+/* Hero */
+.hero{padding-block:72px 48px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
+.hero h1{font-size:clamp(52px,9vw,124px);letter-spacing:-.015em;line-height:1.04}
+.hero h1 em{color:var(--accent)}
+.hero p{margin:0;color:var(--soft);max-width:46ch}
+.facts{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.facts b{display:block;font-family:var(--serif);font-weight:300;font-size:34px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:820px){.hero{grid-template-columns:1fr;padding-block:48px 32px;gap:24px}}
+
+/* Video frame */
+.vframe{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;background:var(--panel);overflow:hidden;border:1px solid var(--line)}
+.vframe img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:grayscale(.35)}
+.vframe video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.vframe .over{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px;text-decoration:none}
+.vframe .play{width:72px;height:72px;border-radius:50%;border:1px solid rgba(236,231,223,.7);display:grid;place-items:center;margin:0 auto 14px}
+.vframe .play::before{content:"";border-left:15px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:5px}
+.vframe .t{font-family:var(--serif);font-size:clamp(20px,3vw,30px);line-height:1.2}
+
+/* Section heading */
+.sec{padding-top:110px;scroll-margin-top:60px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:44px}
+.sec-head h2{font-size:clamp(38px,5.5vw,68px);margin-top:12px}
+.sec-head p{margin:0;color:var(--soft);max-width:48ch;justify-self:end}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr;gap:14px}.sec-head p{justify-self:start}}
+
+/* Categories */
+.cats{display:flex;flex-wrap:wrap;gap:10px}
+.cats button{display:inline-flex;align-items:baseline;gap:8px;padding:11px 20px 12px;border-radius:999px;border:1px solid rgba(236,231,223,.12);background:rgba(236,231,223,.03);color:var(--soft);cursor:pointer;font:inherit;transition:background .35s ease,color .35s ease,border-color .35s ease,transform .35s ease}
+.cats button .n{font-family:var(--serif);font-size:clamp(18px,1.7vw,22px);line-height:1.1;color:inherit}
+.cats button .c{font-size:11px;letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums;transition:color .35s ease}
+.cats button:hover{color:var(--ink);border-color:rgba(236,231,223,.28);background:rgba(236,231,223,.06)}
+.cats button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#141312}
+.cats button[aria-selected="true"] .c{color:#6f6a63}
+@media (max-width:760px){.cats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;-webkit-overflow-scrolling:touch}.cats::-webkit-scrollbar{display:none}.cats button{flex:0 0 auto}}
+.cat-panel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:48px;margin-top:28px;padding:32px;border-radius:20px;background:rgba(236,231,223,.025);border:1px solid rgba(236,231,223,.06);align-items:start;animation:catIn .45s ease}
+@keyframes catIn{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cat-intro h3{font-size:clamp(30px,3.6vw,46px)}
+.cat-intro p{color:var(--soft);margin:14px 0 0;max-width:40ch}
+.cat-list{display:grid;gap:6px}
+.cat-item{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:20px;align-items:center;padding:10px 16px 10px 10px;border-radius:14px;text-decoration:none;color:inherit;transition:background .3s ease}
+.cat-item:hover{background:rgba(236,231,223,.05)}
+.cat-item img{width:120px;height:80px;object-fit:cover;display:block;background:var(--panel);border-radius:10px}
+.cat-item h4{margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(20px,2vw,26px);line-height:1.2}
+.cat-item .sub{font-size:13px;color:var(--muted);margin-top:4px}
+.cat-item .go{font-size:18px;color:var(--muted);white-space:nowrap;transition:transform .3s ease,color .3s ease}
+.cat-item:hover h4{color:#fff}
+.cat-item:hover .go{color:var(--ink);transform:translateX(4px)}
+@media (max-width:820px){.cat-panel{grid-template-columns:1fr;gap:20px;padding:20px;border-radius:16px}}
+@media (max-width:520px){.cat-item{grid-template-columns:88px minmax(0,1fr);padding:8px}.cat-item img{width:88px;height:60px}.cat-item .go{display:none}}
+
+/* Project cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 28px}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.cards{grid-template-columns:1fr;gap:44px}}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.card .img{position:relative;overflow:hidden;aspect-ratio:3/2;background:var(--panel);max-width:100%}
+.card .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .6s ease}
+.card:hover .img img{transform:scale(1.035)}
+.card .count{position:absolute;right:12px;bottom:10px;background:rgba(10,10,10,.72);padding:3px 10px;color:var(--soft)}
+.card h3{font-size:clamp(24px,2.6vw,32px);margin-top:20px}
+.card dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;margin:12px 0 18px;font-size:14px}
+.card dt{margin:0}
+.card dd{margin:0;color:var(--soft)}
+.card .btn{align-self:flex-start;margin-top:auto}
+.card:hover .btn{border-color:var(--ink)}
+
+/* Project page */
+.proj{padding-block:40px 24px}
+.back{display:inline-flex;gap:8px;text-decoration:none;color:var(--soft);font-size:13px;letter-spacing:.06em}
+.back:hover{color:var(--ink)}
+.ph-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end;margin:28px 0 36px}
+.ph-head h1{font-size:clamp(40px,6.5vw,84px);letter-spacing:-.01em;margin-top:12px}
+.ph-head p{margin:16px 0 0;color:var(--soft);max-width:52ch}
+.meta{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;align-self:end;border-top:1px solid var(--line);padding-top:18px}
+.meta dt{margin:0}
+.meta dd{margin:0;color:var(--soft);font-size:14px}
+@media (max-width:820px){.ph-head{grid-template-columns:1fr;gap:22px}}
+.gallery{columns:3 280px;column-gap:12px;margin-top:12px}
+.ph{break-inside:avoid;display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:var(--panel);cursor:zoom-in}
+.ph img{display:block;width:100%;max-width:100%;height:auto;transition:opacity .25s}
+.ph:hover img{opacity:.86}
+.pn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:64px;border-top:1px solid var(--line)}
+.pn a{display:block;padding-block:24px;text-decoration:none}
+.pn a:last-child{text-align:right}
+.pn a span.t{display:block;font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);margin-top:6px}
+.pn a:hover span.t{color:#fff}
+
+/* About */
+.about{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:56px;align-items:start}
+.portrait{margin:0;background:#f3f1ee;max-width:100%}
+.portrait img{display:block;width:100%;height:auto}
+.about h2{font-size:clamp(36px,5vw,60px);margin:12px 0 24px}
+.about p{color:var(--soft);max-width:60ch;margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{border:1px solid var(--line);padding:5px 12px;font-size:13px;color:var(--soft)}
+@media (max-width:820px){.about{grid-template-columns:1fr;gap:32px}.portrait{max-width:380px}}
+
+/* Clients */
+.clients{padding-block:110px 90px;text-align:center}
+.clients h2{font-size:clamp(28px,3.4vw,40px);margin-top:12px}
+.clients .rule{width:56px;height:1px;background:var(--accent);margin:22px auto 44px}
+.logos{display:grid;gap:18px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.lane{display:flex;width:max-content;animation:slide 60s linear infinite}
+.lane.rev{animation-direction:reverse}
+.logos:hover .lane{animation-play-state:paused}
+.group{display:flex}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.group{gap:14px;padding-right:14px}
+.logo-tile{flex:none;display:grid;place-items:center;width:200px;height:108px;padding:14px 22px;border-radius:6px;overflow:hidden;background:#fff}
+.logo-tile img{max-width:150px;max-height:64px;width:auto;height:auto;object-fit:contain}
+.logo-tile.fill{padding:0}
+.logo-tile.fill img{max-width:none;max-height:none;width:100%;height:100%;object-fit:cover}
+.logo-tile .wm{font-family:"Montserrat",var(--sans);font-weight:600;font-size:19px;letter-spacing:.02em;color:#111;white-space:nowrap}
+.logo-tile span{font-family:var(--serif);font-size:18px;color:#1a1a1a;line-height:1.2;text-align:center}
+
+/* Behind the scenes */
+.bts{display:flex;flex-direction:column;gap:10px}
+.bts .row{display:flex;gap:10px}
+.bts .ph{margin:0;flex:none;overflow:hidden;border-radius:4px}
+.bts .ph img{width:100%;height:100%;object-fit:cover}
+.bts-head p{max-width:46ch}
+
+/* Footer */
+.foot{background:var(--foot);border-top:1px solid var(--line)}
+.foot .cols{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px;padding-block:64px 44px}
+.foot h4{font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px}
+.foot p,.foot li{color:var(--muted);font-size:14px;margin:0}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot .brand{font-family:var(--serif);font-size:28px;line-height:1.1;margin:0 0 14px;display:block;text-decoration:none}
+.foot .brand em{color:var(--accent)}
+.foot .ct li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
+.foot .ct svg{width:15px;height:15px;margin-top:4px;stroke:var(--soft);fill:none;stroke-width:1.5}
+.foot .ct code{font-family:var(--sans);user-select:all;color:var(--soft);word-break:break-all}
+.foot .cpy{font:inherit;font-size:12px;letter-spacing:.06em;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line);padding:0;margin-left:8px;cursor:pointer}
+.foot .cpy:hover{color:var(--ink)}
+.social{display:flex;gap:10px;margin-top:2px;flex-wrap:wrap}
+.social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:border-color .2s}
+.social a:hover{border-color:var(--ink)}
+.social svg{width:16px;height:16px;fill:var(--soft)}
+.foot .base{border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-block:20px 28px}
+@media (max-width:900px){.foot .cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.foot .cols{grid-template-columns:1fr}}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:20;background:rgba(8,8,8,.97);display:grid;grid-template-rows:minmax(0,1fr) auto;padding:calc(14px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb .stage{display:grid;place-items:center;min-height:0}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;flex-wrap:wrap}
+.lb .bar .t{font-family:var(--serif);font-size:20px}
+.lb .ctl{display:flex;gap:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top gut">
+  <div class="wrap">
+    <a class="logo" href="#top">Khánh Nguyễn <em>Raw</em></a>
+    <nav aria-label="Mục"><a href="#danh-muc" class="hide-s">Danh mục</a><a href="#du-an" id="nav-du-an">Dự án</a><a href="#hau-truong" class="hide-s">Hậu trường</a><a href="#gioi-thieu" class="hide-s">Giới thiệu</a><a href="#lien-he">Liên hệ</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Trang chủ -->
+  <div id="home" class="gut">
+    <div class="wrap">
+      <section class="hero">
+        <h1>Khánh Nguyễn <em>Raw</em></h1>
+        <div>
+          <p>Mình là Khánh Nguyễn, Media Producer và Director of Photography tại TP.HCM. Bốn năm qua mình đứng sau ống kính ở concert, festival trường đại học, sàn diễn thời trang và sự kiện doanh nghiệp, theo mỗi dự án từ lúc lên kế hoạch đến bản dựng cuối.</p>
+          <p style="margin-top:12px">Raw là cách mình làm việc: bắt khoảnh khắc thật, giữ đúng không khí của buổi hôm đó, để hình ảnh tự kể câu chuyện.</p>
+          <div class="facts">
+            <div><b>4+</b><span class="label">năm</span></div>
+            <div><b>50+</b><span class="label">dự án</span></div>
+            <div><b>30+</b><span class="label">brand &amp; agency</span></div>
+          </div>
+        </div>
+      </section>
+
+      <figure class="lead" style="margin:0"><img src="p/hero.jpg" width="2000" height="1331" alt="Khánh Nguyễn cầm máy ảnh tác nghiệp giữa khán giả tại một đêm concert" style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:3/2;object-fit:cover"><figcaption class="label" style="padding-top:10px">Khánh Nguyễn · Behind the lens</figcaption></figure>
+
+      <section class="sec" id="danh-muc">
+        <div class="sec-head">
+          <div><span class="label">Danh mục</span><h2>Mình chụp <em>những gì</em></h2></div>
+          <p>Chọn một mảng để xem nhanh các dự án thuộc mảng đó.</p>
+        </div>
+        <div class="cats" id="cats" role="tablist" aria-label="Danh mục dự án"></div>
+        <div class="cat-panel" id="catPanel" role="tabpanel"></div>
+      </section>
+
+      <section class="sec" id="du-an">
+        <div class="sec-head">
+          <div><span class="label">Dự án nổi bật</span><h2>Những sự kiện <em>đã ghi lại</em></h2></div>
+          <p>Mỗi dự án là một bộ ảnh riêng, từ concert trường đại học, fashion show đến sự kiện doanh nghiệp và nội dung thương hiệu.</p>
+        </div>
+        <div class="cards" id="cards"></div>
+      </section>
+
+      <section class="sec" id="hau-truong">
+        <div class="sec-head bts-head">
+          <div><span class="label">Behind the scenes</span><h2>Hậu <em>trường</em></h2></div>
+          <p>Từ sân golf giữa trưa đến phòng điều khiển live lúc nửa đêm. Đây là crew và những giờ làm việc phía sau mỗi bộ ảnh.</p>
+        </div>
+        <div class="bts" id="bts"></div>
+      </section>
+
+      <section class="sec" id="gioi-thieu">
+        <div class="about">
+          <figure class="portrait"><img src="img/khanh.jpg" width="692" height="1200" alt="Chân dung Khánh Nguyễn" loading="lazy"></figure>
+          <div>
+            <span class="label">Giới thiệu</span>
+            <h2>Người đứng sau <em>ống kính</em></h2>
+            <p>Bạn có thể gọi mình là Media Executive hay Producer, nhưng việc mình làm nhiều nhất vẫn là kể chuyện bằng hình ảnh. Bốn năm qua mình làm photographer, videographer, editor và quản lý dự án, nên có thể theo một sản phẩm từ ý tưởng thô đến bản dựng cuối.</p>
+            <p>Mình tin hình đẹp đến từ sự cân bằng giữa sáng tạo và yêu cầu thương mại. Dù đang điều phối một sự kiện lớn hay tự cầm máy, mình luôn làm hết sức để người xem có trải nghiệm tốt nhất.</p>
+            <div class="chips"><span>Photography</span><span>Videography</span><span>Live production</span><span>Post production</span><span>Photoshop</span><span>Lightroom</span><span>Premiere Pro</span><span>CapCut</span></div>
+            <div style="margin-top:28px"><a class="btn solid" href="#lien-he">Đặt lịch chụp &amp; quay</a></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Trang dự án -->
+  <div id="project" class="gut" hidden><div class="wrap proj" id="projBody"></div></div>
+
+  <section class="clients gut" aria-labelledby="kh">
+    <div class="wrap">
+      <span class="label">Đã đồng hành</span>
+      <h2 id="kh">Khách hàng &amp; đối tác</h2>
+      <div class="rule"></div>
+      <div class="logos" id="logos"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot gut" id="lien-he" style="scroll-margin-top:60px">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top">Khánh Nguyễn <em>Raw</em></a>
+        <p style="max-width:34ch">Media Producer · Director of Photography. Nhận chụp ảnh, quay và dựng video cho sự kiện, concert, fashion show và doanh nghiệp tại TP.HCM và các tỉnh.</p>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul class="ct">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><code id="phone">0706 834 755</code><button class="cpy" data-copy="phone">Sao chép</button></span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><code id="mail">enwykay@gmail.com</code><button class="cpy" data-copy="mail">Sao chép</button></span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>TP. Hồ Chí Minh · nhận job các tỉnh</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dịch vụ</h4>
+        <ul><li>Chụp ảnh sự kiện</li><li>Quay &amp; dựng video recap</li><li>Live production · multi-cam</li><li>Fashion show &amp; runway</li><li>Nội dung thương hiệu F&amp;B</li><li>Hậu kỳ ảnh &amp; video</li></ul>
+      </div>
+      <div>
+        <h4>Theo dõi</h4>
+        <div class="social" id="social"></div>
+      </div>
+    </div>
+    <div class="base"><span class="label">© 2026 Khánh Nguyễn Raw</span><span class="label">Photography · Videography · Production</span></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Xem ảnh">
+  <div class="stage"><img id="lbImg" alt=""></div>
+  <div class="bar">
+    <div><div class="t" id="lbTitle"></div><div class="label" id="lbMeta"></div></div>
+    <div class="ctl"><button class="btn" id="prev" aria-label="Ảnh trước">←</button><button class="btn" id="next" aria-label="Ảnh sau">→</button><button class="btn" id="close">Đóng</button></div>
+  </div>
+</div>
+
+<script>
+const PHOTOS = {"wcd":[["p/wcd-01.jpg",1600,1068,""],["p/wcd-02.jpg",1600,846,""],["p/wcd-03.jpg",1600,1067,""],["p/wcd-04.jpg",1600,1005,""],["p/wcd-05.jpg",1600,1052,""],["p/wcd-06.jpg",1600,1051,""],["p/wcd-07.jpg",1600,1070,""],["p/wcd-08.jpg",1600,1067,""],["p/wcd-09.jpg",1600,1029,""],["p/wcd-10.jpg",1600,1067,""],["p/wcd-11.jpg",1600,1046,""],["p/wcd-12.jpg",1600,1067,""],["p/wcd-13.jpg",1600,1067,""],["p/wcd-14.jpg",1600,791,""],["p/wcd-15.jpg",1600,1067,""],["p/wcd-16.jpg",1600,1067,""],["p/wcd-17.jpg",1600,966,""],["p/wcd-18.jpg",1600,1067,""],["p/wcd-19.jpg",1600,1029,""],["p/wcd-20.jpg",1600,1002,""],["p/wcd-21.jpg",1600,934,""],["p/wcd-22.jpg",1600,1020,""],["p/wcd-23.jpg",1600,1081,""],["p/wcd-24.jpg",1600,1067,""],["p/wcd-25.jpg",1067,1600,""],["p/wcd-26.jpg",1600,1067,""],["p/wcd-27.jpg",1600,1067,""],["p/wcd-28.jpg",1600,1067,""],["p/wcd-29.jpg",1067,1600,""],["p/wcd-30.jpg",1600,1097,""]],"sr":[["p/sr-01.jpg",1068,1600,""],["p/sr-02.jpg",1068,1600,""],["p/sr-03.jpg",1068,1600,""],["p/sr-04.jpg",1068,1600,""],["p/sr-05.jpg",1068,1600,""],["p/sr-06.jpg",1068,1600,""],["p/sr-07.jpg",1068,1600,""],["p/sr-08.jpg",1068,1600,""],["p/sr-09.jpg",1068,1600,""],["p/sr-10.jpg",1068,1600,""],["p/sr-11.jpg",1068,1600,""],["p/sr-12.jpg",1068,1600,""],["p/sr-13.jpg",1068,1600,""],["p/sr-14.jpg",1068,1600,""],["p/sr-15.jpg",1068,1600,""],["p/sr-16.jpg",1068,1600,""],["p/sr-17.jpg",1068,1600,""],["p/sr-18.jpg",1068,1600,""],["p/sr-19.jpg",1068,1600,""],["p/sr-20.jpg",1068,1600,""],["p/sr-21.jpg",1068,1600,""],["p/sr-22.jpg",1068,1600,""],["p/sr-23.jpg",1068,1600,""],["p/sr-24.jpg",1068,1600,""],["p/sr-25.jpg",1068,1600,""],["p/sr-26.jpg",1068,1600,""],["p/sr-27.jpg",1068,1600,""],["p/sr-28.jpg",1068,1600,""],["p/sr-29.jpg",1068,1600,""],["p/sr-30.jpg",1068,1600,""],["p/sr-31.jpg",1068,1600,""],["p/sr-32.jpg",1068,1600,""],["p/sr-33.jpg",1068,1600,""],["p/sr-34.jpg",1068,1600,""],["p/sr-35.jpg",1068,1600,""],["p/sr-36.jpg",1068,1600,""],["p/sr-37.jpg",1068,1600,""],["p/sr-38.jpg",1068,1600,""],["p/sr-39.jpg",1068,1600,""],["p/sr-40.jpg",1068,1600,""]],"golf":[["p/golf-01.jpg",1600,1065,"KAY_8647"],["p/golf-02.jpg",1600,1065,"KAY_8817"],["p/golf-03.jpg",1600,1065,"NUN_3728"],["p/golf-04.jpg",1600,1065,"NUN_4102"],["p/golf-05.jpg",1600,1065,"KAY_8366"],["p/golf-06.jpg",1600,1065,"KAY_8470"],["p/golf-07.jpg",1600,1065,"NUN_3817"],["p/golf-08.jpg",1600,1065,"NUN_4140"],["p/golf-09.jpg",1065,1600,"NUN_4254"],["p/golf-10.jpg",1600,1065,"KAY_0194"],["p/golf-11.jpg",1600,1065,"KAY_9286"],["p/golf-12.jpg",1600,1064,"KAY_9303"],["p/golf-13.jpg",1600,1065,"KAY_9386"],["p/golf-14.jpg",1600,1064,"KAY_9418"],["p/golf-15.jpg",1600,1065,"KAY_9641"],["p/golf-16.jpg",1600,1065,"KAY_9843"]],"gen":[["p/gen-01.jpg",1600,1067,""],["p/gen-02.jpg",1600,1067,""],["p/gen-03.jpg",1600,1067,""],["p/gen-04.jpg",1600,1067,""],["p/gen-05.jpg",1600,1067,""],["p/gen-06.jpg",1600,1067,""],["p/gen-07.jpg",1600,1067,""],["p/gen-08.jpg",1600,1067,""],["p/gen-09.jpg",1600,1067,""],["p/gen-10.jpg",1600,1067,""],["p/gen-11.jpg",1600,1067,""],["p/gen-12.jpg",1600,1067,""],["p/gen-13.jpg",1067,1600,""],["p/gen-14.jpg",1600,1067,""],["p/gen-15.jpg",1600,1067,""],["p/gen-16.jpg",1600,1067,""],["p/gen-17.jpg",1600,1067,""],["p/gen-18.jpg",1600,1067,""],["p/gen-19.jpg",1600,1067,""],["p/gen-20.jpg",1600,1067,""],["p/gen-21.jpg",1600,1067,""],["p/gen-22.jpg",1600,1067,""],["p/gen-23.jpg",1600,1067,""],["p/gen-24.jpg",1600,1067,""],["p/gen-25.jpg",1600,1067,""],["p/gen-26.jpg",1600,1067,""],["p/gen-27.jpg",1600,1067,""],["p/gen-28.jpg",1600,1067,""],["p/gen-29.jpg",1600,1067,""],["p/gen-30.jpg",1600,1067,""],["p/gen-31.jpg",1600,1067,""],["p/gen-32.jpg",1600,1067,""],["p/gen-33.jpg",1600,1067,""],["p/gen-34.jpg",1600,1067,""]],"neti":[["p/neti-01.jpg",1600,1065,""],["p/neti-02.jpg",1600,1065,""],["p/neti-03.jpg",1600,1065,""],["p/neti-04.jpg",1600,1064,""],["p/neti-05.jpg",1600,1065,""],["p/neti-06.jpg",1064,1600,""],["p/neti-07.jpg",1600,1065,""],["p/neti-08.jpg",1600,1065,""],["p/neti-09.jpg",1600,1065,""],["p/neti-10.jpg",1600,1065,""],["p/neti-11.jpg",1600,1064,""],["p/neti-12.jpg",1600,1065,""],["p/neti-13.jpg",1600,1065,""],["p/neti-14.jpg",1600,1065,""],["p/neti-15.jpg",1600,900,""],["p/neti-16.jpg",1065,1600,""],["p/neti-17.jpg",1600,1065,""],["p/neti-18.jpg",1600,1065,""],["p/neti-19.jpg",1600,1065,""],["p/neti-20.jpg",1600,1065,""]],"cl":[["p/cl-01.jpg",1600,900,""],["p/cl-02.jpg",1600,1065,""],["p/cl-03.jpg",1065,1600,""],["p/cl-04.jpg",1600,1065,""],["p/cl-05.jpg",1600,1065,""],["p/cl-06.jpg",1600,1065,""],["p/cl-07.jpg",1065,1600,""],["p/cl-08.jpg",1600,1065,""],["p/cl-09.jpg",1600,1065,""],["p/cl-10.jpg",1600,1065,""],["p/cl-11.jpg",1600,1065,""],["p/cl-12.jpg",1600,1065,""],["p/cl-13.jpg",1065,1600,""],["p/cl-14.jpg",1065,1600,""],["p/cl-15.jpg",1065,1600,""],["p/cl-16.jpg",1065,1600,""],["p/cl-17.jpg",1065,1600,""],["p/cl-18.jpg",1065,1600,""],["p/cl-19.jpg",1600,1065,""],["p/cl-20.jpg",1600,1065,""],["p/cl-21.jpg",1065,1600,""],["p/cl-22.jpg",1065,1600,""],["p/cl-23.jpg",1065,1600,""],["p/cl-24.jpg",1600,1065,""],["p/cl-25.jpg",1600,1065,""],["p/cl-26.jpg",1600,1065,""],["p/cl-27.jpg",1600,1065,""],["p/cl-28.jpg",1600,1064,""],["p/cl-29.jpg",1600,1065,""],["p/cl-30.jpg",1600,1065,""],["p/cl-31.jpg",1600,1065,""],["p/cl-32.jpg",1600,1065,""],["p/cl-33.jpg",1064,1600,""],["p/cl-34.jpg",1600,1065,""],["p/cl-35.jpg",1600,1065,""],["p/cl-36.jpg",1600,1065,""],["p/cl-37.jpg",1600,1065,""],["p/cl-38.jpg",1600,1065,""],["p/cl-39.jpg",1600,1065,""],["p/cl-40.jpg",1600,1065,""]],"bo":[["p/bo-01.jpg",1600,1065,""],["p/bo-02.jpg",1600,900,""],["p/bo-03.jpg",1600,1067,""],["p/bo-04.jpg",1065,1600,""],["p/bo-05.jpg",1067,1600,""],["p/bo-06.jpg",1600,1065,""],["p/bo-07.jpg",1600,1065,""],["p/bo-08.jpg",1600,1065,""],["p/bo-09.jpg",1600,1065,""],["p/bo-10.jpg",1600,1065,""],["p/bo-11.jpg",1600,1065,""],["p/bo-12.jpg",1600,1067,""],["p/bo-13.jpg",1600,1067,""],["p/bo-14.jpg",1600,1067,""],["p/bo-15.jpg",1600,1066,""],["p/bo-16.jpg",1600,1067,""],["p/bo-17.jpg",1600,1065,""],["p/bo-18.jpg",1600,1065,""],["p/bo-19.jpg",1065,1600,""],["p/bo-20.jpg",1067,1600,""],["p/bo-21.jpg",1067,1600,""],["p/bo-22.jpg",1067,1600,""],["p/bo-23.jpg",1067,1600,""],["p/bo-24.jpg",1600,1064,""],["p/bo-25.jpg",1600,1065,""],["p/bo-26.jpg",1065,1600,""],["p/bo-27.jpg",1065,1600,""],["p/bo-28.jpg",1064,1600,""],["p/bo-29.jpg",1600,1065,""],["p/bo-30.jpg",1600,1065,""],["p/bo-31.jpg",1600,1065,""],["p/bo-32.jpg",1064,1600,""],["p/bo-33.jpg",1065,1600,""],["p/bo-34.jpg",1065,1600,""],["p/bo-35.jpg",1600,1065,""],["p/bo-36.jpg",1065,1600,""],["p/bo-37.jpg",1600,1065,""],["p/bo-38.jpg",1064,1600,""]],"bday":[["p/bday-01.jpg",1600,1065,""],["p/bday-02.jpg",1600,1065,""],["p/bday-03.jpg",1600,1065,""],["p/bday-04.jpg",1600,1065,""],["p/bday-05.jpg",1600,1065,""],["p/bday-06.jpg",1600,1065,""],["p/bday-07.jpg",1600,1065,""],["p/bday-08.jpg",1600,1065,""],["p/bday-09.jpg",1600,1065,""],["p/bday-10.jpg",1600,1065,""],["p/bday-11.jpg",1600,1065,""],["p/bday-12.jpg",1600,1065,""],["p/bday-13.jpg",1600,1065,""],["p/bday-14.jpg",1600,1065,""],["p/bday-15.jpg",1600,1065,""],["p/bday-16.jpg",1600,1065,""],["p/bday-17.jpg",1600,1065,""],["p/bday-18.jpg",1600,1065,""],["p/bday-19.jpg",1600,1065,""],["p/bday-20.jpg",1600,1065,""]],"bts":[["p/bts-01.jpg",1600,1065,""],["p/bts-02.jpg",1065,1600,""],["p/bts-03.jpg",1067,1600,""],["p/bts-04.jpg",1600,1065,""],["p/bts-05.jpg",1067,1600,""],["p/bts-06.jpg",1067,1600,""],["p/bts-07.jpg",1600,1067,""],["p/bts-08.jpg",1600,1200,""],["p/bts-09.jpg",1600,1067,""],["p/bts-10.jpg",1600,1067,""],["p/bts-11.jpg",1067,1600,""],["p/bts-12.jpg",1020,1020,""],["p/bts-13.jpg",1600,1065,""],["p/bts-14.jpg",1600,1067,""],["p/bts-15.jpg",1200,1600,""]],"vt":[["p/vt-01.jpg",1143,1600,""],["p/vt-02.jpg",1600,1064,""],["p/vt-03.jpg",1600,1065,""],["p/vt-04.jpg",1600,1065,""],["p/vt-05.jpg",1600,1065,""],["p/vt-06.jpg",1600,1065,""],["p/vt-07.jpg",1600,1065,""],["p/vt-08.jpg",1600,1065,""],["p/vt-09.jpg",1600,1065,""],["p/vt-10.jpg",1600,1065,""],["p/vt-11.jpg",1600,1064,""],["p/vt-12.jpg",1600,1065,""],["p/vt-13.jpg",1600,1065,""],["p/vt-14.jpg",1600,1065,""],["p/vt-15.jpg",1600,1065,""],["p/vt-16.jpg",1600,1065,""],["p/vt-17.jpg",1600,1065,""],["p/vt-18.jpg",1065,1600,""],["p/vt-19.jpg",1600,1065,""],["p/vt-20.jpg",1600,1064,""],["p/vt-21.jpg",1600,1015,""],["p/vt-22.jpg",1600,1064,""],["p/vt-23.jpg",1600,1065,""],["p/vt-24.jpg",1600,1064,""],["p/vt-25.jpg",1600,1065,""],["p/vt-26.jpg",1600,1065,""],["p/vt-27.jpg",1600,1065,""],["p/vt-28.jpg",1600,1065,""],["p/vt-29.jpg",1600,1065,""],["p/vt-30.jpg",1600,1065,""]],"next":[["p/next-01.jpg",1066,1600,""],["p/next-02.jpg",1065,1600,""],["p/next-03.jpg",1600,1067,""],["p/next-04.jpg",1065,1600,""],["p/next-05.jpg",1065,1600,""],["p/next-06.jpg",1065,1600,""],["p/next-07.jpg",1067,1600,""],["p/next-08.jpg",1065,1600,""],["p/next-09.jpg",1067,1600,""],["p/next-10.jpg",1065,1600,""],["p/next-11.jpg",1065,1600,""],["p/next-12.jpg",1065,1600,""],["p/next-13.jpg",1600,1065,""],["p/next-14.jpg",1600,1065,""],["p/next-15.jpg",1600,1067,""],["p/next-16.jpg",1065,1600,""],["p/next-17.jpg",1600,1065,""],["p/next-18.jpg",1065,1600,""],["p/next-19.jpg",1600,1066,""],["p/next-20.jpg",1065,1600,""],["p/next-21.jpg",1065,1600,""],["p/next-22.jpg",1065,1600,""],["p/next-23.jpg",1065,1600,""],["p/next-24.jpg",1065,1600,""],["p/next-25.jpg",1600,1065,""],["p/next-26.jpg",1065,1600,""],["p/next-27.jpg",1600,1065,""]]};
+
+/* VIDEO: điền "mp4" (file đặt cạnh trang) hoặc "link" (YouTube/Vimeo/Drive). Để trống thì hiện khung chờ. */
+const SHOWREEL = { mp4:"", link:"", poster:"p/wcd-01.jpg" };
+
+/* LOGO KHÁCH HÀNG: tất cả nằm trên ô nền trắng. Hàng trên chạy trái → phải, hàng dưới chạy phải → trái. */
+const CLIENTS = [
+ {name:"Đại học Hoa Sen", logo:"logob/dai-hoc-hoa-sen.png"},
+ {name:"Hai Mươi Không Phai", logo:"logob/hai-muoi-khong-phai.png"},
+ {name:"Generali", logo:"logob/generali.png"},
+ {name:"The Reverie Saigon", logo:"logob/the-reverie-saigon.png"},
+ {name:"Ambrosia", logo:"logob/ambrosia.png"},
+ {name:"Việt Thương Music", logo:"logob/viet-thuong-music.png"},
+ {name:"386 Concept", text:"386 CONCEPT"},
+ {name:"The Next Live Concert", logo:"logob/the-next-live-concert.png"},
+ {name:"Forest Studio", logo:"logob/forest-studio.png"},
+ {name:"bidu", logo:"logob/bidu.png"},
+ {name:"Running Man Vietnam", logo:"logob/running-man.png"},
+ {name:"Nhà của Bơ", logo:"logob/nha-cua-bo.png"},
+ {name:"JMC Vietnam", logo:"logob/jmc-vietnam.png"},
+ {name:"Tân Định Compound", logo:"logob/tandinh-compound.png"},
+ {name:"Pro Events", logo:"logob/proevent.png"},
+ {name:"GB Vietnam", logo:"logob/gb-vietnam.png"},
+ {name:"DNX Agency", logo:"logob/dnx-agency.png"},
+ {name:"Musicaland", logo:"logob/musicaland.png"},
+ {name:"The Verse", logo:"logob/the-verse.png"},
+ {name:"Aura Impact Cup", logo:"logob/aura-impact-cup.png"},
+ {name:"Gisdio", logo:"logob/gis-dio.png"},
+ {name:"Ớt Cay Xè", logo:"logob/ot-cay-xe.png"},
+ {name:"Báo Thức", logo:"logob/bao-thuc.png"},
+ {name:"Pickleball Clubhouse", logo:"logob/pickleball.png"},
+ {name:"Xcution", logo:"logob/xcution.png"},
+ {name:"HSU Nik All Star", logo:"logob/tachnen-hsunik.png"},
+ {name:"Overline", logo:"logob/overline.png"},
+ {name:"Bà Bar", logo:"logob/ba-bar.png"},
+ {name:"Blanc de Blancs", logo:"logob/blanc-de-blance.png"},
+ {name:"b'look", logo:"logob/b-look.png"},
+ {name:"Ivy Honey", logo:"logob/ivy-honey.png"},
+ {name:"Si Mê", logo:"logob/si-me.png"}
+];
+
+/* MẠNG XÃ HỘI */
+const SOCIAL = { facebook:"https://www.facebook.com/enwykay", instagram:"https://www.instagram.com/enwykay" };
+
+const EVENTS = [
+ {id:"welcome-day", key:"wcd", title:"Welcome Day K24", client:"Đại học Hoa Sen", type:"Concert · Sự kiện trường", place:"TP. Hồ Chí Minh", year:"2024",
+  text:"Đêm chào tân sinh viên với chuỗi tiết mục ca nhạc, nhảy và lô tô show. Ghi lại ánh sáng sân khấu, nghệ sĩ và khoảnh khắc của sinh viên.", video:{mp4:"",link:""}},
+ {id:"the-next", key:"next", title:"The Next Live Concert 2026", client:"GB Vietnam Event Agency", type:"Concert · Ảnh & video", role:"Photography · Videography · Hậu kỳ", place:"Vạn Phúc City, TP. Hồ Chí Minh", year:"2026",
+  text:"Concert bùng nổ quy tụ nhiều nghệ sĩ hàng đầu và hàng nghìn khán giả. Nhiệm vụ là bắt trọn năng lượng sân khấu, ánh sáng và cảm xúc đám đông thành những khung hình tự kể chuyện.", video:{mp4:"",link:""}},
+ {id:"viet-thuong-showroom", key:"vt", title:"Việt Thương Music Showroom", client:"Việt Thương Music", type:"Không gian thương hiệu · Showroom", place:"TP. Hồ Chí Minh", year:"2026",
+  text:"Bộ ảnh và video không gian flagship store: mặt tiền, các khu piano, trống, keyboard và guitar, cùng những chi tiết nhận diện Touch to Feel trên từng nhạc cụ.", video:{mp4:"",link:""}},
+ {id:"local-pride", key:"sr", title:"SR Celebrating Local Pride 8", client:"Các local brand thời trang", type:"Fashion show", place:"TP. Hồ Chí Minh", year:"",
+  text:"Show diễn của nhiều local brand như AnyShape, Laviici, K&K Fashion, Cara Club × Faslink. Chụp runway từng thiết kế và khu booth trưng bày.", video:{mp4:"",link:""}},
+ {id:"golf", key:"golf", title:"Golf Championship & Gala", client:"Giải golf doanh nghiệp", type:"Thể thao · Gala", place:"TP. Hồ Chí Minh", year:"",
+  text:"Một ngày trọn vẹn từ sân golf đến tiệc trao giải buổi tối: cú swing, khoảnh khắc trên green, biểu diễn violin và trao giải.", video:{mp4:"",link:""}},
+ {id:"genbella", key:"gen", title:"Khai trương Genbella Tân Phú 2", client:"Generali Việt Nam", type:"Sự kiện doanh nghiệp", place:"Tân Phú, TP. Hồ Chí Minh", year:"2024",
+  text:"Lễ khai trương văn phòng tổng đại lý: cắt băng, trao bảng tài trợ, biểu diễn violin và hoạt động bên trong văn phòng.", video:{mp4:"",link:""}},
+ {id:"netiq", key:"neti", title:"NetIQ · Kỷ niệm 1 năm", client:"NetIQ", type:"Sự kiện doanh nghiệp", place:"TP. Hồ Chí Minh", year:"",
+  text:"Buổi gặp gỡ đối tác ấm cúng với chủ đề Hợp Âm. Ảnh chân dung khách mời, khoảnh khắc trò chuyện và quà tặng sự kiện.", video:{mp4:"",link:""}},
+ {id:"cau-long", key:"cl", title:"Hội thao Công đoàn Renesas", client:"Renesas", type:"Thể thao · Giải cầu lông", place:"TP. Hồ Chí Minh", year:"2026",
+  text:"Giải cầu lông nội bộ trong chuỗi hội thao công đoàn: thi đấu, cổ vũ và chụp ảnh trao giải.", video:{mp4:"",link:""}},
+ {id:"nha-cua-bo", key:"bo", title:"Nhà của Bơ", client:"Nhà của Bơ · matcha & coffee", type:"F&B · Nội dung thương hiệu", place:"TP. Hồ Chí Minh", year:"2026",
+  text:"Bộ ảnh cho quán: không gian, đồ uống, đội ngũ và những ngày chuẩn bị triển lãm tại quán.", video:{mp4:"",link:""}},
+ {id:"sinh-nhat", key:"bday", title:"Tiệc sinh nhật tại Zumwhere", client:"Khách hàng cá nhân", type:"Tiệc riêng", place:"TP. Hồ Chí Minh", year:"",
+  text:"Bữa tiệc sinh nhật buổi tối: chân dung khách mời, bàn tiệc và khoảnh khắc thổi nến.", video:{mp4:"",link:""}}
+];
+
+const $=s=>document.querySelector(s);
+const pad=n=>String(n).padStart(2,"0");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function videoHTML(v, poster, title){
+  const img=`<img class="poster" src="${poster}" alt="" loading="lazy">`;
+  if(v.mp4) return `<video controls preload="none" playsinline poster="${poster}"><source src="${esc(v.mp4)}" type="video/mp4"></video>`;
+  if(v.link) return `${img}<a class="over" href="${esc(v.link)}" target="_blank" rel="noopener"><div><div class="play"></div><div class="t">${esc(title)}</div><div class="label" style="margin-top:6px">Mở video</div></div></a>`;
+  return `${img}<div class="over"><div><div class="play" style="opacity:.5"></div><div class="t">${esc(title)}</div><div class="label" style="margin-top:6px">Video đang cập nhật</div></div></div>`;
+}
+
+
+const CATS=[
+ {id:"festival", name:"Festival", text:"Concert, đêm nhạc và lễ hội trường đại học: sân khấu lớn, ánh sáng mạnh và năng lượng đám đông.", items:["welcome-day","the-next"]},
+ {id:"brands", name:"Brands", text:"Hình ảnh cho thương hiệu: không gian cửa hàng, sản phẩm và những sự kiện ra mắt.", items:["viet-thuong-showroom","nha-cua-bo","local-pride"]},
+ {id:"fashion", name:"Fashion", text:"Runway và fashion show: từng look, từng bước catwalk, ánh sáng sân khấu thời trang.", items:["local-pride"]},
+ {id:"mice", name:"MICE", text:"Sự kiện doanh nghiệp: khai trương, hội nghị, gặp gỡ đối tác và gala, ghi lại trọn vẹn và đúng nhận diện.", items:["genbella","netiq","golf"]},
+ {id:"sport", name:"Sport", text:"Giải đấu và hội thao: tốc độ, khoảnh khắc thi đấu và niềm vui trao giải.", items:["golf","cau-long"]},
+ {id:"fnb", name:"F&B", text:"Quán, đồ uống và con người phía sau quầy bar, cho mạng xã hội và nhận diện thương hiệu.", items:["nha-cua-bo"]},
+ {id:"personal", name:"Personal", text:"Tiệc riêng, sinh nhật và những dịp đáng nhớ của gia đình, bạn bè.", items:["sinh-nhat"]}
+];
+let catCur=CATS[0].id;
+try{ const s=localStorage.getItem("kr-cat"); if(CATS.some(c=>c.id===s)) catCur=s; }catch(_){}
+function renderCats(){
+  $("#cats").innerHTML=CATS.map(c=>`<button role="tab" id="cat-${c.id}" data-cat="${c.id}" aria-selected="${c.id===catCur}" aria-controls="catPanel"><span class="n">${esc(c.name)}</span></button>`).join("");
+  const c=CATS.find(x=>x.id===catCur);
+  $("#catPanel").setAttribute("aria-labelledby","cat-"+c.id);
+  $("#catPanel").innerHTML=`<div class="cat-intro"><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p></div>
+    <div class="cat-list">${c.items.map(id=>{const e=EVENTS.find(x=>x.id===id); const p=PHOTOS[e.key][e.cover||0];
+      return `<a class="cat-item" href="#${e.id}"><img src="${p[0]}" alt="" loading="lazy" decoding="async"><div><h4>${esc(e.title)}</h4><div class="sub">${esc(e.client)} · ${PHOTOS[e.key].length} ảnh</div></div><span class="go" aria-hidden="true">→</span></a>`;}).join("")}</div>`;
+}
+$("#cats").addEventListener("click",ev=>{
+  const b=ev.target.closest("[data-cat]"); if(!b) return;
+  catCur=b.dataset.cat; renderCats();
+  try{ localStorage.setItem("kr-cat",catCur); }catch(_){}
+});
+$("#cats").addEventListener("keydown",ev=>{
+  if(ev.key!=="ArrowRight"&&ev.key!=="ArrowLeft") return;
+  const i=CATS.findIndex(c=>c.id===catCur), n=(i+(ev.key==="ArrowRight"?1:-1)+CATS.length)%CATS.length;
+  catCur=CATS[n].id; renderCats(); document.getElementById("cat-"+catCur).focus();
+});
+renderCats();
+
+$("#cards").innerHTML = EVENTS.map(e=>{
+  const p=PHOTOS[e.key][e.cover||0];
+  return `<a class="card" href="#${e.id}">
+    <div class="img"><img src="${p[0]}" width="${p[1]}" height="${p[2]}" alt="${esc(e.title)}" loading="lazy" decoding="async"><span class="label count">${pad(PHOTOS[e.key].length)} ảnh</span></div>
+    <h3>${esc(e.title)}</h3>
+    <dl><dt class="label">Khách hàng</dt><dd>${esc(e.client)}</dd><dt class="label">Hạng mục</dt><dd>${esc(e.type)}</dd></dl>
+    <span class="btn">Xem dự án <span aria-hidden="true">→</span></span>
+  </a>`;
+}).join("");
+
+const tile=c=>`<div class="logo-tile" title="${esc(c.name)}">${c.text?`<b class="wm">${esc(c.text)}</b>`:c.logo?`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`:`<span>${esc(c.name)}</span>`}</div>`;
+const half=Math.ceil(CLIENTS.length/2);
+
+
+$("#logos").innerHTML=[CLIENTS.slice(0,half),CLIENTS.slice(half)].map((g,i)=>{
+  const h=g.map(tile).join("");
+  return `<div class="lane${i?"":" rev"}"><div class="group">${h}</div><div class="group" aria-hidden="true">${h}</div></div>`;
+}).join("");
+
+const BTS={key:"bts",title:"Hậu trường"};
+/* Hậu trường: xếp ảnh thành các hàng cao bằng nhau, hàng nào cũng lấp đủ chiều ngang */
+function layoutBts(){
+  const box=$("#bts"), W=box.clientWidth; if(!W) return;
+  const GAP=10, target=W<600?150:W<1000?210:250;
+  const items=PHOTOS.bts.map((p,j)=>({p,j,r:p[1]/p[2]}));
+  const rows=[]; let row=[], sum=0;
+  items.forEach(it=>{ row.push(it); sum+=it.r;
+    if(sum*target+(row.length-1)*GAP>=W){ rows.push(row); row=[]; sum=0; } });
+  if(row.length){
+    const last=rows[rows.length-1], h=(W-(row.length-1)*GAP)/row.reduce((a,b)=>a+b.r,0);
+    if(last && h>target*1.6){ /* hàng cuối quá ít ảnh: gộp vào hàng trước */ rows[rows.length-1]=last.concat(row); }
+    else rows.push(row);
+  }
+  box.innerHTML=rows.map(r=>{
+    const h=(W-(r.length-1)*GAP)/r.reduce((a,b)=>a+b.r,0);
+    return `<div class="row">${r.map(({p,j,r:ra})=>`<button class="ph" data-ev="bts" data-i="${j}" style="width:${(ra*h).toFixed(2)}px;height:${h.toFixed(2)}px" aria-label="Xem lớn ảnh hậu trường ${j+1}"><img src="${p[0]}" alt="Hậu trường, ảnh ${j+1}" loading="lazy" decoding="async"></button>`).join("")}</div>`;
+  }).join("");
+}
+let btsW=0;
+new ResizeObserver(()=>{ const w=$("#bts").clientWidth; if(w&&w!==btsW){ btsW=w; layoutBts(); } }).observe($("#bts"));
+
+const ICON={
+ facebook:'<path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/>',
+ instagram:'<path d="M12 7.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 1 0 12 7.5zm0 7.4a2.9 2.9 0 1 1 0-5.8 2.9 2.9 0 0 1 0 5.8zM17.3 5.6a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 3c-2.4 0-2.7 0-3.7.1C5.1 3.2 3.2 5 3.1 8.3 3 9.3 3 9.6 3 12s0 2.7.1 3.7c.1 3.2 2 5.1 5.2 5.2 1 .1 1.3.1 3.7.1s2.7 0 3.7-.1c3.2-.1 5.1-2 5.2-5.2.1-1 .1-1.3.1-3.7s0-2.7-.1-3.7c-.1-3.2-2-5.1-5.2-5.2C14.7 3 14.4 3 12 3zm0 1.6c2.4 0 2.6 0 3.6.1 2.4.1 3.6 1.3 3.7 3.7.1.9.1 1.2.1 3.6s0 2.7-.1 3.6c-.1 2.4-1.3 3.6-3.7 3.7-.9.1-1.2.1-3.6.1s-2.7 0-3.6-.1c-2.4-.1-3.6-1.3-3.7-3.7-.1-.9-.1-1.2-.1-3.6s0-2.7.1-3.6c.1-2.4 1.3-3.6 3.7-3.7.9-.1 1.2-.1 3.6-.1z"/>',
+ youtube:'<path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/>',
+ behance:'<path d="M8.2 11.4c.9-.4 1.4-1.1 1.4-2.1C9.6 7.2 8 6.5 6.1 6.5H2v11h4.3c2 0 3.9-1 3.9-3.2 0-1.4-.7-2.5-2-2.9zM4.4 8.4h1.8c.7 0 1.3.2 1.3 1s-.5 1.1-1.2 1.1H4.4zm2 7.2h-2v-2.9h2.1c.9 0 1.4.4 1.4 1.4s-.7 1.5-1.5 1.5zM19.9 13.6c0-2.4-1.4-4.3-3.9-4.3-2.4 0-4.1 1.8-4.1 4.2 0 2.5 1.6 4.2 4.1 4.2 1.9 0 3.1-.8 3.7-2.6h-1.9c-.2.7-1 1-1.7 1-1.2 0-1.8-.7-1.8-1.9h5.6zm-5.6-1c.1-1 .7-1.6 1.7-1.6s1.5.7 1.6 1.6zM14 7h4v1h-4z"/>'};
+$("#social").innerHTML = Object.entries(SOCIAL).map(([k,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${k==="facebook"?"Facebook":"Instagram"} của Khánh Nguyễn" title="${k==="facebook"?"Facebook":"Instagram"}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg></a>`).join("");
+
+/* Trang dự án theo #hash */
+function renderProject(e){
+  const ph=PHOTOS[e.key], i=EVENTS.indexOf(e);
+  const prev=EVENTS[(i-1+EVENTS.length)%EVENTS.length], next=EVENTS[(i+1)%EVENTS.length];
+  const rows=[["Khách hàng",e.client],["Hạng mục",e.type]];
+  if(e.role) rows.push(["Vai trò",e.role]);
+  rows.push(["Địa điểm",e.place]);
+  if(e.year) rows.push(["Năm",e.year]);
+  rows.push(["Ảnh",ph.length+" tấm"]);
+  $("#projBody").innerHTML=`
+    <a class="back" href="#du-an">← Tất cả dự án</a>
+    <div class="ph-head">
+      <div><span class="label">${esc(e.type)}</span><h1>${esc(e.title)}</h1><p>${esc(e.text)}</p></div>
+      <dl class="meta">${rows.map(r=>`<dt class="label">${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>
+    </div>
+    ${(e.video.mp4||e.video.link)?`<div class="vframe">${videoHTML(e.video, ph[e.cover||0][0], "Recap · "+e.title)}</div>`:""}
+    <div class="gallery">${ph.map((p,j)=>`<button class="ph" data-i="${j}" aria-label="Xem lớn ảnh ${j+1}"><img src="${p[0]}" width="${p[1]}" height="${p[2]}" alt="${esc(e.title)}, ảnh ${j+1}" loading="${j<6?"eager":"lazy"}" decoding="async"></button>`).join("")}</div>
+    <nav class="pn" aria-label="Dự án khác">
+      <a href="#${prev.id}"><span class="label">← Dự án trước</span><span class="t">${esc(prev.title)}</span></a>
+      <a href="#${next.id}"><span class="label">Dự án sau →</span><span class="t">${esc(next.title)}</span></a>
+    </nav>`;
+}
+let cur=null;
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  const e=EVENTS.find(x=>x.id===h);
+  if(e){
+    cur=e; renderProject(e);
+    $("#home").hidden=true; $("#project").hidden=false;
+    document.title=e.title+" · Khánh Nguyễn Raw";
+    window.scrollTo(0,0);
+  }else{
+    const wasProject=!$("#project").hidden;
+    $("#project").hidden=true; $("#home").hidden=false; document.title="Khánh Nguyễn Raw";
+    const t=h&&document.getElementById(h);
+    if(t) t.scrollIntoView(); else if(wasProject||h==="top") window.scrollTo(0,0);
+  }
+}
+window.addEventListener("hashchange",route);
+route();
+
+/* Lightbox */
+let idx=0;
+function show(i){
+  const ph=PHOTOS[cur.key]; idx=(i+ph.length)%ph.length;
+  $("#lbImg").src=ph[idx][0]; $("#lbImg").alt=`${cur.title}, ảnh ${idx+1}`;
+  $("#lbTitle").textContent=cur.title; $("#lbMeta").textContent=`${idx+1} / ${ph.length}`;
+}
+document.addEventListener("click",ev=>{
+  const b=ev.target.closest(".ph"); if(!b) return;
+  if(b.dataset.ev==="bts") cur=BTS;
+  if(cur){ show(+b.dataset.i); $("#lb").hidden=false; $("#close").focus(); }
+});
+const close=()=>{$("#lb").hidden=true};
+$("#close").onclick=close; $("#prev").onclick=()=>show(idx-1); $("#next").onclick=()=>show(idx+1);
+$("#lb").addEventListener("click",ev=>{ if(ev.target.classList.contains("stage")) close(); });
+document.addEventListener("keydown",ev=>{
+  if($("#lb").hidden) return;
+  if(ev.key==="Escape") close(); if(ev.key==="ArrowLeft") show(idx-1); if(ev.key==="ArrowRight") show(idx+1);
+});
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const el=document.getElementById(b.dataset.copy), label=b.textContent;
+  const done=()=>{b.textContent="Đã sao chép";setTimeout(()=>b.textContent=label,1600)};
+  const fb=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Nhấn Ctrl+C"};
+  try{navigator.clipboard.writeText(el.textContent).then(done,fb)}catch(_){fb()}
+}));
+</script>
+
+</body></html>
